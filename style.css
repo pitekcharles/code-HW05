@@ -7,6 +7,7 @@
 .headSection {
     text-align: center;
     border-bottom: 5px solid black;
+    width:100%;
 }
 
 .planner {
@@ -16,18 +17,25 @@
 .time {
     width:10%;
     float:left;
-    height:50px;
+    height:100px;
 }
 
 .plan {
     background: lightgrey;
     width:80%;
     float:left;
-    height:50px;
+    height:100px;
 }
 
 .saveButton {
     width:10%;
     float:left;
-    height:50px;
+    height:100px;
+    background: teal;
+}
+
+.timeSlot {
+    border-bottom: 2px solid gray;
+    width: 80%;
+    margin: auto;
 }
