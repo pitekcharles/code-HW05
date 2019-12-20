@@ -1,0 +1,33 @@
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.headSection {
+    text-align: center;
+    border-bottom: 5px solid black;
+}
+
+.planner {
+
+}
+
+.time {
+    width:10%;
+    float:left;
+    height:50px;
+}
+
+.plan {
+    background: lightgrey;
+    width:80%;
+    float:left;
+    height:50px;
+}
+
+.saveButton {
+    width:10%;
+    float:left;
+    height:50px;
+}
