@@ -16,3 +16,11 @@
 // }
 
 // plannerPop();
+
+function saveClick () { //function that is run when save button is clicked
+
+}
+
+function pullStorage () { //function to get info from local storage
+
+}
