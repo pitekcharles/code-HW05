@@ -1,5 +1,5 @@
-var saveAry = [];
-var printAry = [];
+var saveAry = ["","","","","","","","","","","","","","","","",""];
+var printAry = ["","","","","","","","","","","","","","","","",""];
 
 
 //---------------------------------------------------
@@ -11,6 +11,7 @@ var printAry = [];
 //---------------------------------------------------
 var dayDate = moment().format("dddd, MMMM Do YYYY");
 var currentHour = moment().format("HH");
+// saveAry.push(dayDate);
 
 console.log(currentHour);
 console.log(dayDate);
@@ -19,30 +20,26 @@ console.log(dayDate);
 
 $(".date").text(dayDate);
 
-function saveClick () { //function that is run when save button is clicked
+function saveClick (event) { //function that is run when save button is clicked
+    event.preventDefault();
     var time = $(this).attr("data-time")
     var test2 = $(this).siblings();
     var test3 = test2[1].value;
-    console.log(time);
-    console.log(test2);
-    console.log(test3);
     saveAry[time] = test3;
-    console.log(saveAry);
+    console.log(saveAry)
     var storageAry = saveAry.toString();
     localStorage.setItem("Planner Save", storageAry);
     pullStorage();
+    
 
     //need to rename some variables and convert array into string and store in local storage.
 }
 
 function pullStorage () { //function to get info from local storage and populate input fields to contain info from storage
-    console.log("pullStorage test");
     printAry = localStorage.getItem("Planner Save");
     printAry = printAry.split(",");
-    console.log(printAry);
     for (var i = 9; i<printAry.length; i++){
         var temp =document.getElementById(i);
-        console.log(temp);
         $(temp).val(printAry[i]);
         if (i == currentHour) {
             $(temp).css("background", "red")
@@ -53,6 +50,12 @@ function pullStorage () { //function to get info from local storage and populate
 
     
 }
-pullStorage();
+// pullStorage();
 saveAry = printAry;
+// if (dayDate !== printAry[0]){
+//     saveAry = printAry;
+// } else {
+//     saveAry = [];
+// }
+
 $(".planner").on("click", "button", saveClick)
