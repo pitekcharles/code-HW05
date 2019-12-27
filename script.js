@@ -1,6 +1,8 @@
 var saveAry = [];
 var dayDate = moment().format("dddd, MMMM Do YYYY");
-console.log(dayDate)
+var currentHour = moment().format("hh A");
+
+console.log(currentHour);
 
 $(".date").text(dayDate);
 
