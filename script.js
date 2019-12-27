@@ -1,7 +1,6 @@
 var saveAry = ["","","","","","","","","","","","","","","","",""];
 var printAry = ["","","","","","","","","","","","","","","","",""];
 
-
 //---------------------------------------------------
 // these lines create variables using moment.js
 // and then console.log out those variables to show
@@ -17,6 +16,9 @@ console.log(currentHour);
 console.log(dayDate);
 
 //---------------------------------------------------
+if (localStorage.getItem("Planner Save") === null){
+    localStorage.setItem("Planner Save", saveAry);
+}
 
 $(".date").text(dayDate);
 
@@ -49,6 +51,7 @@ function pullStorage () { //function to get info from local storage and populate
             }
         }
     } else {
+        localStorage.setItem("Planner Save", ["","","","","","","","","","","","","","","","",""])
         localStorage.setItem("date", dayDate);
     }
 
