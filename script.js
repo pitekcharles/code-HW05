@@ -38,19 +38,23 @@ function saveClick (event) { //function that is run when save button is clicked
 function pullStorage () { //function to get info from local storage and populate input fields to contain info from storage
     printAry = localStorage.getItem("Planner Save");
     printAry = printAry.split(",");
-    for (var i = 9; i<printAry.length; i++){
-        var temp =document.getElementById(i);
-        $(temp).val(printAry[i]);
-        if (i == currentHour) {
-            $(temp).css("background", "red")
-        } else if (i < currentHour) {
-            $(temp).css("background", "grey")
+    if (localStorage.getItem("date") === dayDate){
+        for (var i = 9; i<printAry.length; i++){
+            var temp =document.getElementById(i);
+            $(temp).val(printAry[i]);
+            if (i == currentHour) {
+                $(temp).css("background", "red")
+            } else if (i < currentHour) {
+                $(temp).css("background", "grey")
+            }
         }
+    } else {
+        localStorage.setItem("date", dayDate);
     }
 
     
 }
-// pullStorage();
+pullStorage();
 saveAry = printAry;
 // if (dayDate !== printAry[0]){
 //     saveAry = printAry;
