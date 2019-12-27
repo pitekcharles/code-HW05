@@ -1,14 +1,13 @@
 var saveAry = [];
 
 function saveClick () { //function that is run when save button is clicked
-    console.log(this);
-    var test = $(this).attr("data-time")
+    var time = $(this).attr("data-time")
     var test2 = $(this).siblings();
     var test3 = test2[1].value;
-    console.log(test);
+    console.log(time);
     console.log(test2);
     console.log(test3);
-    saveAry[test] = test3;
+    saveAry[time] = test3;
     console.log(saveAry);
 
     //need to rename some variables and convert array into string and store in local storage.
