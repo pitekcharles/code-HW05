@@ -2,7 +2,7 @@ var saveAry = [];
 var dayDate = moment().format("dddd, MMMM Do YYYY");
 console.log(dayDate)
 
-$(".date").val(dayDate);
+$(".date").text(dayDate);
 
 function saveClick () { //function that is run when save button is clicked
     var time = $(this).attr("data-time")
