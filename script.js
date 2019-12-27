@@ -1,8 +1,19 @@
 var saveAry = [];
+
+//---------------------------------------------------
+// these lines create variables using moment.js
+// and then console.log out those variables to show
+// the format that moment gives for each. there is 
+// more info in the docs on different options and 
+// formatting.
+//---------------------------------------------------
 var dayDate = moment().format("dddd, MMMM Do YYYY");
 var currentHour = moment().format("hh A");
 
 console.log(currentHour);
+console.log(dayDate);
+
+//---------------------------------------------------
 
 $(".date").text(dayDate);
 
